@@ -1,0 +1,113 @@
+.thumbs:hover .thumb {
+    transform: scale(0.9); /* Уменьшаем все фотографии */
+   }
+   .thumb {
+    display: inline-flex;
+    position: block;
+    margin:30px 11.5%;
+    transition: 0.7s ease-out; /* Переход */
+   }
+   .thumb:hover {
+    transform: scale(1.2) rotate(-70deg) !important; /* Увеличиваем фотографию */ 
+   }
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Caption');
+.menu-main {
+  list-style: none;
+  padding: 5px;
+  margin: -8px;
+  font-size: 18px;
+  text-align: center;
+  position:relative;
+  background: rgb(198, 235, 233);
+}
+
+.menu-main:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  left: 0;
+  bottom: -20px;
+  background: radial-gradient(rgb(177, 212, 211) 0%, rgb(198, 235, 233) 70%, rgb(255, 255, 255) 70%, rgb(255, 255, 255) 100%) 0 -10px;
+  background-size: 20px 20px;
+  background-repeat: repeat-x;
+}
+
+.menu-main li:first-child {
+  border:none;
+  }
+
+.menu-main li {
+  display: inline-block;
+  padding: 0px 3px;
+  border-left: 3px solid rgb(175, 226, 224);
+}
+.menu-main a {
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 15px;
+  padding: 10px 30px;
+  font-family: 'PT Sans Caption', sans-serif;
+  color: #777777;
+  transition: 0.3s linear;
+  position: relative;
+}
+.menu-main a:before,
+.menu-main a:after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 3px);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffc038;
+  opacity: 0;
+  transition: .5s ease-in-out;
+}
+.menu-main a:before {left: 5px;}
+.menu-main a:after {right: 5px;}
+.menu-main a.current:before,
+.menu-main a.current:after,
+.menu-main a:hover:before, 
+.menu-main a:hover:after {opacity: 1;}
+.menu-main a.current,
+.menu-main a:hover {color: #ffc038;}
+@media(max-width:680px) {
+  .menu-main li {display: block;}
+}
+#button {   
+  display: inline-block;   
+  background-color: #FF9800;   
+  width: 50px;   
+  height: 50px;   
+  text-align: center;   
+  border-radius: 4px;   
+  margin: 30px;   
+  position: fixed;   
+  bottom: 30px;   
+  right: 30px;   
+  transition: background-color .3s, opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;   
+  z-index: 1000; 
+}
+#button:hover {   
+   cursor: pointer;   
+   background-color: #333; 
+} 
+#button:active {   
+   background-color: #555; 
+}
+#button.show {
+  opacity: 1;
+  visibility: visible;
+}
+#button::after {
+  content: '\25B2';
+  font-family: sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff; 
+}
